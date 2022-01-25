@@ -6,9 +6,13 @@ require('dotenv').config({path: './config.env'});
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
+app.use(express.json());
+
+app.use('/api/auth', require('./routes/auth'));
+
+const PORT = process.env.PORT || 4000;
 
 app.listen( PORT, () => console.log(`server is running on port ${PORT}`))
 
 
-
+// 34:11
