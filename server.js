@@ -1,7 +1,12 @@
 const express = require('express');
 
 require('dotenv').config({path: './config.env'});
+const connectDB  = require("./config/db");
 
+
+// connecting database 
+
+connectDB();
 
 
 const app = express();
@@ -15,4 +20,3 @@ const PORT = process.env.PORT || 4000;
 app.listen( PORT, () => console.log(`server is running on port ${PORT}`))
 
 
-// 34:11
